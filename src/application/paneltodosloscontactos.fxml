@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--  POR ALGUNA RAZON SUPERIOR A MI ENTENDIMIENTO NO ES NECESARIO PONER AQUI EL CONTROLADOR -->
+
+<fx:root prefHeight="600.0" prefWidth="650.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="430.0" prefWidth="431.0">
+         <children>
+            <VBox layoutX="-5.0" layoutY="-4.0" prefHeight="437.0" prefWidth="437.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Todos los contactos">
+                           <font>
+                              <Font size="42.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children></HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</fx:root>

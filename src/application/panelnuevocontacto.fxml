@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--  POR ALGUNA RAZON SUPERIOR A MI ENTENDIMIENTO NO ES NECESARIO PONER AQUI EL CONTROLADOR -->
+
+<fx:root prefHeight="600.0" prefWidth="650.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PanelNuevoContactoController">
+   <children>
+      <Pane layoutX="-7.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0">
+         <children>
+            <VBox layoutX="-5.0" layoutY="-4.0" prefHeight="562.0" prefWidth="437.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Añadir Nuevo Contacto">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children></HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="58.0" prefWidth="437.0">
+                     <children>
+                        <Label text="Nombre : ">
+                           <HBox.margin>
+                              <Insets left="45.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="campo_nombre" prefHeight="25.0" prefWidth="225.0">
+                           <HBox.margin>
+                              <Insets left="30.0" top="16.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Favorito">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <CheckBox fx:id="esfavorito" mnemonicParsing="false">
+                                 <VBox.margin>
+                                    <Insets left="45.0" />
+                                 </VBox.margin>
+                              </CheckBox>
+                           </children>
+                        </VBox>
+                     </children></HBox>
+                  <HBox layoutX="10.0" layoutY="110.0" prefHeight="58.0" prefWidth="437.0">
+                     <children>
+                        <Label text="Telefono">
+                           <HBox.margin>
+                              <Insets left="45.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="campo_telefono" prefHeight="25.0" prefWidth="225.0">
+                           <HBox.margin>
+                              <Insets left="30.0" top="16.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="168.0" prefHeight="58.0" prefWidth="437.0">
+                     <children>
+                        <Label text="E-Mail : ">
+                           <HBox.margin>
+                              <Insets left="45.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="campo_email" prefHeight="25.0" prefWidth="225.0">
+                           <HBox.margin>
+                              <Insets left="30.0" top="16.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="226.0" prefHeight="58.0" prefWidth="437.0">
+                     <children>
+                        <Label text="Genero : ">
+                           <HBox.margin>
+                              <Insets left="45.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <RadioButton fx:id="radiob_masculino" mnemonicParsing="false" onAction="#grupogeneros" onMouseDragReleased="#grupogeneros" text="Masculino" HBox.hgrow="SOMETIMES">
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radiob_femenino" layoutX="113.0" layoutY="30.0" mnemonicParsing="false" onAction="#grupogeneros" onMouseDragReleased="#grupogeneros" text="Femenino">
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radiob_apachedecombate" layoutX="188.0" layoutY="10.0" mnemonicParsing="false" onAction="#grupogeneros" text="Apache de combate">
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="284.0" prefHeight="58.0" prefWidth="437.0">
+                     <children>
+                        <Label text="Grupo : ">
+                           <HBox.margin>
+                              <Insets left="45.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="grupo_" onMousePressed="#grupo_combobox" prefHeight="25.0" prefWidth="186.0">
+                           <HBox.margin>
+                              <Insets left="30.0" top="16.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="342.0" prefHeight="74.0" prefWidth="437.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Notas">
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" text="Adicionales : ">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="notas_adicionales" prefHeight="61.0" prefWidth="279.0">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="400.0" prefHeight="74.0" prefWidth="437.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Fecha">
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" text="de">
+                                 <VBox.margin>
+                                    <Insets left="50.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="25.0" text="Nacimieto">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <DatePicker fx:id="fechadenacimiento" onAction="#RecogerFecha" prefHeight="25.0" prefWidth="229.0" promptText="Introduzca la fecha de nacimineto">
+                           <HBox.margin>
+                              <Insets left="40.0" top="20.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="474.0" prefHeight="74.0" prefWidth="437.0">
+                     <children>
+                        <Label text="Imagen : ">
+                           <HBox.margin>
+                              <Insets left="30.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="imagen" fitHeight="82.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="80.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="490.0" prefHeight="74.0" prefWidth="437.0">
+                     <children>
+                        <Button fx:id="borrar" mnemonicParsing="false" onAction="#LimpiarCampos" text="Limpiar Campos">
+                           <HBox.margin>
+                              <Insets left="100.0" top="40.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="añadir" mnemonicParsing="false" onAction="#GuardarContacto" text="Aceptar">
+                           <HBox.margin>
+                              <Insets left="50.0" top="40.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="atras" mnemonicParsing="false" text="Atras">
+                           <HBox.margin>
+                              <Insets left="50.0" top="40.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</fx:root>

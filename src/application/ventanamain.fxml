@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<!--  NUNCA OLVIDAR IMPLEMENTAR EL CONTROLLER EN LA LINEA RAIZ DEL FXML  -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <BorderPane fx:id="mainPane" prefHeight="579.0" prefWidth="651.0">
+         <top>
+            <MenuBar prefHeight="25.0" prefWidth="466.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#P_NuevoContacto" text="Nuevo Contacto" />
+                        <MenuItem mnemonicParsing="false" onAction="#P_EditarContacto" text="Editar Contacto" />
+                        <MenuItem mnemonicParsing="false" onAction="#P_ExportarContacto" text="Exportar Contacto" />
+                        <MenuItem mnemonicParsing="false" onAction="#P_Salir" text="Salir" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ver">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#P_Favoritos" text="Favoritos" />
+                        <MenuItem mnemonicParsing="false" onAction="#P_TodosLosContactos" text="Ver todos los Contactos" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
