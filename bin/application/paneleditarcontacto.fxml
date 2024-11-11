@@ -18,7 +18,7 @@
 
 <!--  POR ALGUNA RAZON SUPERIOR A MI ENTENDIMIENTO NO ES NECESARIO PONER AQUI EL CONTROLADOR -->
 
-<fx:root prefHeight="600.0" prefWidth="567.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="600.0" prefWidth="567.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Pane layoutX="6.0" prefHeight="600.0" prefWidth="644.0">
          <children>
@@ -123,7 +123,7 @@
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin></Label>
-                                    <ChoiceBox fx:id="grupo_" prefHeight="25.0" prefWidth="224.0">
+                                    <ChoiceBox fx:id="grupo_" onMousePressed="#grupo_combobox" prefHeight="25.0" prefWidth="224.0">
                                        <HBox.margin>
                                           <Insets left="38.0" />
                                        </HBox.margin></ChoiceBox>

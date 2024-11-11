@@ -140,7 +140,18 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 		 radio_femenino.setToggleGroup(t);
 		 radio_apache.setToggleGroup(t);
 	}
-	
+	@FXML
+	 public void grupo_combobox() {
+		 grupo_.setItems(FXCollections.observableArrayList("Amigos", "Familia", "trabajo"));
+		 grupo_.setValue("Amigos");
+		 handleListView();
+	 }
+	 @FXML
+	 private void handleListView() {
+		 grupo_.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+				System.out.println("Elemento seleccionado: " + newValue);
+			});
+		}
 
 	
 }
