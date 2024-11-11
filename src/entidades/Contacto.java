@@ -97,7 +97,7 @@ public class Contacto {
 	//forma en la que almaceno los contactos
 	@Override
 	public String toString() {
-		return " "+ getNombre()+" "+getTelefono()+" "+getEmail()+" "+getGenero()+" "+getGrupo()+" "+isFavorito()+" "+getNotas()+" "+getFechanac().toString()+" \n";
+		return " \n "+ getNombre()+" "+getTelefono()+" "+getEmail()+" "+getGenero()+" "+getGrupo()+" "+isFavorito()+" "+getNotas()+" "+getFechanac().toString();
 	}
 	
 }

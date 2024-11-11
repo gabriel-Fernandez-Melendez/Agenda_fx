@@ -167,7 +167,7 @@
                               </HBox>
                               <HBox layoutX="10.0" layoutY="353.0" prefHeight="49.0" prefWidth="403.0">
                                  <children>
-                                    <Button fx:id="modificar" mnemonicParsing="false" text="Modificar">
+                                    <Button fx:id="modificar" mnemonicParsing="false" onAction="#BotonModificar" text="Modificar">
                                        <HBox.margin>
                                           <Insets left="40.0" />
                                        </HBox.margin></Button>
