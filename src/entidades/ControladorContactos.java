@@ -11,6 +11,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class ControladorContactos {
 	
 	public static void escribir(Contacto c) {
@@ -33,8 +36,8 @@ public class ControladorContactos {
 		}				
 	}
 	//tengo que hacer que las notas adicionales se pongan juntas
-	public static ArrayList<Contacto> LeerContactos(){
-		ArrayList<Contacto> contactos = new ArrayList<Contacto>();
+	public static ObservableList<Contacto> LeerContactos(){
+		ObservableList<Contacto> contactos = FXCollections.observableArrayList();
 		Contacto con;
 		boolean fav;
 		String direc = "Ficheros/ficheronuevocontacto.txt";

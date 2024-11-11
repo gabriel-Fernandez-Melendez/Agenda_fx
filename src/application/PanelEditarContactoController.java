@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 
 import entidades.Contacto;
 import entidades.ControladorContactos;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,7 +25,7 @@ import javafx.scene.layout.AnchorPane;
 public class PanelEditarContactoController extends AnchorPane implements Initializable{
 	
 	@FXML
-	private ListView<String> lista;
+	private ListView<Contacto> lista;
 	@FXML
 	private TextField campo_nombre;
 	@FXML
@@ -66,9 +68,25 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 	        }
 	    }
 
+	public ObservableList<Contacto> CargarDatos() {
+		ObservableList<Contacto> con = FXCollections.observableArrayList();
+		con=ControladorContactos.LeerContactos();
+		return con;
+	}
+	//probar que pasa por aqui
+	@FXML
+	public void ListaDeContactos() {
+		System.out.println("pasa por aqui tiene los datos");
+		ObservableList<Contacto> con = CargarDatos();
+		lista.setVisible(true);
+		lista.setItems(con);
+		
+	}
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		ListaDeContactos();
+		
 	}
 	
 	
