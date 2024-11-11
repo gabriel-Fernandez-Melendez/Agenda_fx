@@ -79,7 +79,7 @@
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin></Label>
-                                    <TextField fx:id="campo_movil">
+                                    <TextField fx:id="campo_telefono">
                                        <HBox.margin>
                                           <Insets left="19.0" />
                                        </HBox.margin></TextField>
@@ -103,15 +103,15 @@
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin></Label>
-                                    <RadioButton fx:id="radio_masculino" mnemonicParsing="false" text="Masculino">
+                                    <RadioButton fx:id="radio_masculino" mnemonicParsing="false" onAction="#GrupoGenero" text="Masculino">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin></RadioButton>
-                                    <RadioButton fx:id="radio_femenino" mnemonicParsing="false" text="Femenino">
+                                    <RadioButton fx:id="radio_femenino" mnemonicParsing="false" onAction="#GrupoGenero" text="Femenino">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin></RadioButton>
-                                    <RadioButton fx:id="radio_apache" mnemonicParsing="false" text="Apache de combate">
+                                    <RadioButton fx:id="radio_apache" mnemonicParsing="false" onAction="#GrupoGenero" text="Apache de combate">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin></RadioButton>

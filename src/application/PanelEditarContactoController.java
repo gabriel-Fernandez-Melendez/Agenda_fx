@@ -22,6 +22,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -33,9 +34,9 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 	@FXML
 	private TextField campo_nombre;
 	@FXML
-	private CheckBox esfavorito;
+	private TextField campo_telefono;
 	@FXML
-	private TextField campo_movil;
+	private CheckBox esfavorito;
 	@FXML
 	private TextField campo_email;
 	@FXML
@@ -58,6 +59,9 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 	@FXML
 	private Button atras;
 	
+	private ToggleGroup t =new ToggleGroup();
+	
+	
 	public PanelEditarContactoController(){
 		 System.out.println("estamos en el constructor del panel");
 	        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("paneleditarcontacto.fxml"));
@@ -71,6 +75,10 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 	            e.printStackTrace();
 	        }
 	    }
+
+		
+		
+	
 
 	public ObservableList<Contacto> CargarDatos() {
 		ObservableList<Contacto> con = FXCollections.observableArrayList();
@@ -103,13 +111,36 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 				 //aqui va el codigo que pone los textos en los respectivos campos
 				 System.out.println("ha seleccionado "+con.toString());
 				 campo_nombre.setText(con.getNombre());
+				 campo_telefono.setText(con.getTelefono());
+				 campo_email.setText(con.getEmail());
+				 if(con.getGenero().equalsIgnoreCase(radio_masculino.getText())) {
+					 radio_masculino.setSelected(true);
+				 }
+				 if(con.getGenero().equalsIgnoreCase(radio_femenino.getText())) {
+					 radio_femenino.setSelected(true);
+				 }
+				 if(con.getGenero().equalsIgnoreCase(radio_apache.getText())){
+					 radio_apache.setSelected(true);
+				 }
 				 
-			 }		 
+			 }
+			 System.out.println("llega al final");
 		}
 		else {
 			System.out.println("no se han cargado los datos del contacto");
 		}
 		
 	}
+	@FXML
+	public void GrupoGenero() {
+		radio_masculino.setText("Masculino");
+		radio_femenino.setText("Femenino");
+		radio_apache.setText("Apache_de_combate");
+		radio_masculino.setToggleGroup(t);
+		 radio_femenino.setToggleGroup(t);
+		 radio_apache.setToggleGroup(t);
+	}
+	
+
 	
 }

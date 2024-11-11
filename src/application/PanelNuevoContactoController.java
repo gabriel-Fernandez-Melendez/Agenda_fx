@@ -82,7 +82,7 @@ public class PanelNuevoContactoController extends AnchorPane{
 		 ToggleGroup t =new ToggleGroup();
 		 radiob_masculino.setText("Masculino");
 		 radiob_femenino.setText("Femenino");
-		 radiob_apachedecombate.setText("Apache");
+		 radiob_apachedecombate.setText("Apache_de_combate");
 		 radiob_masculino.setToggleGroup(t);
 		 radiob_femenino.setToggleGroup(t);
 		 radiob_apachedecombate.setToggleGroup(t);
