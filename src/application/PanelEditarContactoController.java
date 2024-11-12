@@ -193,43 +193,22 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 				 String grupo=grupocombo.getValue();
 				 String notasstring=notas_ad.getText();
 				 LocalDate fecha = fechanac.getValue();
-				 modificado.setNombre(nombre);
-				 modificado.setTelefono(telefono);
-				 modificado.setEmail(email);
-				 modificado.setFavorito(favorito);
-				 modificado.setGenero(genero);
-				 modificado.setGrupo(grupo);
-				 modificado.setNotas(notasstring);
-				 modificado.setFechanac(fecha);
+				 con.setNombre(nombre);
+				 con.setTelefono(telefono);
+				 con.setEmail(email);
+				 con.setFavorito(favorito);
+				 con.setGenero(genero);
+				 con.setGrupo(grupo);
+				 con.setNotas(notasstring);
+				 con.setFechanac(fecha);
 				 System.out.println("llego al final");
-				 RemplazarDeLaLista(con,modificado);
+				lista.refresh();
 				 }
-			 
+			 	
 			 }		 
 		 //comparar con la lista de objetos en observable list	 
 		 //remplazar esa posicion con el nuevo contacto modificado
 	 }
 
-	 public boolean RemplazarDeLaLista(Contacto antiguo,Contacto modificado) {
-		 boolean val=true;
-		 ObservableList<Contacto> listacontactos = FXCollections.observableArrayList();
-		 listacontactos=CargarDatos();
-		 for(Contacto c:listacontactos) {
-			 //el planteamiento parece estar bien  pero tengo que hacer la condicional diferente , los objetos llegan de forma correcta
-			 if(c.equals(antiguo)) {
-				 listacontactos.remove(c);				 
-			 }			 
-		 }
-		 listacontactos.add(modificado);
-		 if(listacontactos.contains(modificado)) {
-				 val=true;
-				 	System.out.println("la lista nueve el nuevo contacto");
-			 }
-			 else {
-				 System.out.println("no se ha modificado el contacto");
-				 val=false;
-			 }
-		 return val;
-	 }
 	 
 }
