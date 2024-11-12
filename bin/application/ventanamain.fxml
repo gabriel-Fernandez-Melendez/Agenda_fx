@@ -14,7 +14,7 @@
          <top>
             <MenuBar prefHeight="25.0" prefWidth="466.0" BorderPane.alignment="CENTER">
               <menus>
-                <Menu mnemonicParsing="false" text="Archivo">
+                <Menu text="_Archivo">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#P_NuevoContacto" text="Nuevo Contacto" />
                         <MenuItem mnemonicParsing="false" onAction="#P_EditarContacto" text="Editar Contacto" />
