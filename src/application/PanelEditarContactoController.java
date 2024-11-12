@@ -69,9 +69,10 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 
 	        fxmlLoader.setRoot(this);
 	        fxmlLoader.setController(this);
-
 	        try {
 	            fxmlLoader.load();
+	            fechanac.getEditor().setDisable(true);
+	            grupocombo.setValue("Amigos");
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
@@ -203,12 +204,30 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 				 con.setFechanac(fecha);
 				 System.out.println("llego al final");
 				lista.refresh();
-				 }
-			 	
+				 }	 	
 			 }		 
-		 //comparar con la lista de objetos en observable list	 
-		 //remplazar esa posicion con el nuevo contacto modificado
 	 }
+	 
+	 @FXML
+	 public void LimpiarCampos() {
+		 Alert datos = new Alert(AlertType.CONFIRMATION);
+		 datos.setContentText("¿Quiere limpiarlos campos? (esta accion no se puede revertir)");
+		 datos.setTitle("Limpiar Campos");
+		 Optional<ButtonType> result = datos.showAndWait();
+		 if(result.get()==ButtonType.OK) {
+			 campo_nombre.setText(null);
+			 campo_email.setText(null);
+			 campo_telefono.setText(null);
+			 esfavorito.setSelected(false);
+			 radio_masculino.setSelected(false);
+			 radio_femenino.setSelected(false);
+			 notas_ad.setText(null);
+			 fechanac.setValue(null);
+			 }
+		 else {
+			 System.out.println("el usuario deiccidio no borrar los campos");
+		 }
+		 }
 
 	 
 }

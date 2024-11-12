@@ -67,10 +67,11 @@ public class PanelNuevoContactoController extends AnchorPane{
 	        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("panelnuevocontacto.fxml"));
 
 	        fxmlLoader.setRoot(this);
-	       //fxmlLoader.setController(this);
-	    
+	        fxmlLoader.setController(this);
+	        
 	        try {
-	           fxmlLoader.load(); 
+	           fxmlLoader.load();
+	           fechadenacimiento.getEditor().setDisable(true);
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
