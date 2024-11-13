@@ -79,4 +79,50 @@ public class ControladorContactos {
 		
 		return contactos;
 	}
+	
+	public static ObservableList<Contacto> LeerContactosFavoritos(){
+		ObservableList<Contacto> contactos = FXCollections.observableArrayList();
+		Contacto con;
+		boolean fav;
+		String direc = "Ficheros/ficheronuevocontacto.txt";
+		File fichero = new File(direc);
+		FileReader lector = null;		
+		BufferedReader buffer = null;
+		System.out.println("EENTERGIUJWENRTIUWRNVBIURTBNWRIBVRB");
+		try {
+			lector= new FileReader(fichero);
+			buffer= new BufferedReader(lector);
+			String info;
+			while((info = buffer.readLine()) != null){
+				String[] contacto = info.split("\\s+");
+				if(String.valueOf(contacto[6]).equalsIgnoreCase("true")){
+				String nombre = String.valueOf(contacto[1]);
+				String telefono = String.valueOf(contacto[2]);
+				String email = String.valueOf(contacto[3]);
+				String genero = String.valueOf(contacto[4]);
+				String grupo = String.valueOf(contacto[5]);
+				String esfav = String.valueOf(contacto[6]);
+				if(esfav.equalsIgnoreCase("true")) {
+					fav=true;
+				}
+				else {
+					fav=false;
+				}
+				String notas_ad = String.valueOf(contacto[7]);
+				String fechanac = String.valueOf(contacto[8]);
+				LocalDate fecha = LocalDate.parse(fechanac);
+				con=new Contacto(nombre,telefono,email,genero,grupo,fav,notas_ad,fecha);
+				contactos.add(con);		
+				}								
+			}
+			 buffer.close();
+		     lector.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return contactos;
+	}
 }

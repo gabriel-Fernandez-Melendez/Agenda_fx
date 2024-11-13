@@ -33,7 +33,7 @@ public class PanelFavoritosController extends AnchorPane implements Initializabl
 	
 	public ObservableList<Contacto> CargarDatos() {
 		ObservableList<Contacto> con = FXCollections.observableArrayList();
-		con=ControladorContactos.LeerContactos();
+		con=ControladorContactos.LeerContactosFavoritos();
 		return con;
 	}
 	
