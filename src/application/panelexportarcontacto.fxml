@@ -12,7 +12,7 @@
 
 <!--  POR ALGUNA RAZON SUPERIOR A MI ENTENDIMIENTO NO ES NECESARIO PONER AQUI EL CONTROLADOR -->
 
-<fx:root prefHeight="600.0" prefWidth="650.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="600.0" prefWidth="650.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Pane prefHeight="600.0" prefWidth="650.0">
          <children>
@@ -24,6 +24,9 @@
                            <font>
                               <Font size="51.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets left="120.0" top="30.0" />
+                           </HBox.margin>
                         </Label>
                      </children></HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="458.0" prefWidth="658.0">
@@ -45,7 +48,7 @@
                                     <Insets left="110.0" />
                                  </VBox.margin>
                               </Label>
-                              <Button mnemonicParsing="false" text="Exportar Contacto">
+                              <Button fx:id="exportar" mnemonicParsing="false" onAction="#ExportarContacto" text="Exportar Contacto">
                                  <VBox.margin>
                                     <Insets left="150.0" top="40.0" />
                                  </VBox.margin>

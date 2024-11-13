@@ -46,8 +46,6 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 	@FXML
 	private RadioButton radio_femenino;
 	@FXML
-	private RadioButton radio_apache;
-	@FXML
 	private ChoiceBox<String> grupocombo;
 	@FXML
 	private TextField notas_ad;
@@ -115,17 +113,10 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 				 if(con.getGenero().equalsIgnoreCase(radio_masculino.getText())) {
 					 radio_masculino.setSelected(true);
 					 radio_femenino.setSelected(false);
-					 radio_apache.setSelected(false);
 				 }
 				 if(con.getGenero().equalsIgnoreCase(radio_femenino.getText())) {
 					 radio_femenino.setSelected(true);
 					 radio_masculino.setSelected(false);
-					 radio_apache.setSelected(false);
-				 }
-				 if(con.getGenero().equalsIgnoreCase(radio_apache.getText())){
-					 radio_apache.setSelected(true);
-					 radio_masculino.setSelected(false);
-					 radio_femenino.setSelected(false);
 				 }
 				 notas_ad.setText(con.getNotas());
 				 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -150,10 +141,8 @@ public class PanelEditarContactoController extends AnchorPane implements Initial
 	public String GrupoGenero() {
 		radio_masculino.setText("Masculino");
 		radio_femenino.setText("Femenino");
-		radio_apache.setText("Apache_de_combate");
 		radio_masculino.setToggleGroup(t);
 		 radio_femenino.setToggleGroup(t);
-		 radio_apache.setToggleGroup(t);
 		 RadioButton selec = (RadioButton) t.getSelectedToggle();
 		 String valor =selec.getText();
 		 return valor;

@@ -42,8 +42,6 @@ public class PanelNuevoContactoController extends AnchorPane{
 	@FXML
 	private RadioButton radiob_femenino;
 	@FXML
-	private RadioButton radiob_apachedecombate;
-	@FXML
 	private ChoiceBox<String> grupo_;
 	@FXML
 	private TextField notas_adicionales;
@@ -83,10 +81,8 @@ public class PanelNuevoContactoController extends AnchorPane{
 		 ToggleGroup t =new ToggleGroup();
 		 radiob_masculino.setText("Masculino");
 		 radiob_femenino.setText("Femenino");
-		 radiob_apachedecombate.setText("Apache_de_combate");
 		 radiob_masculino.setToggleGroup(t);
 		 radiob_femenino.setToggleGroup(t);
-		 radiob_apachedecombate.setToggleGroup(t);
 		 RadioButton selec = (RadioButton) t.getSelectedToggle();
 		 String valor=selec.getText();
 		 return valor;
@@ -120,9 +116,8 @@ public class PanelNuevoContactoController extends AnchorPane{
 		 campo_telefono.clear();
 		 campo_email.clear();
 		 notas_adicionales.clear();
-		 radiob_apachedecombate.setSelected(false);
 		 radiob_femenino.setSelected(false);
-		 radiob_apachedecombate.setSelected(false); 
+		 radiob_masculino.setSelected(false); 
 		 System.out.println("se limpiaron los campos");
 		 }
 		 else {

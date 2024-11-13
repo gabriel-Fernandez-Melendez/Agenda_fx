@@ -20,7 +20,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label text="Todos los contactos">
+                        <Label text="Favoritos">
                            <font>
                               <Font size="51.0" />
                            </font>
