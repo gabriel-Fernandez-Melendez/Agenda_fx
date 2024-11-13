@@ -79,10 +79,11 @@ public class PanelNuevoContactoController extends AnchorPane{
 	 @FXML
 	 public String grupogeneros(){
 		 ToggleGroup t =new ToggleGroup();
-		 radiob_masculino.setText("Masculino");
-		 radiob_femenino.setText("Femenino");
 		 radiob_masculino.setToggleGroup(t);
 		 radiob_femenino.setToggleGroup(t);
+		 radiob_masculino.setText(" Masculino");
+		 radiob_femenino.setText(" Femenino");
+		 radiob_masculino.setSelected(true);
 		 RadioButton selec = (RadioButton) t.getSelectedToggle();
 		 String valor=selec.getText();
 		 return valor;
@@ -127,7 +128,8 @@ public class PanelNuevoContactoController extends AnchorPane{
 	 
 	 @FXML
 	 public void GuardarContacto() {
-		 if(campo_nombre.getText()!=null&&campo_telefono.getText()!=null&&campo_email.getText()!=null&&grupogeneros()!=null&&grupo_.getValue()!=null&&notas_adicionales.getText()!=null&&fechadenacimiento.getValue()!=null) {
+		 String val=grupogeneros();
+		 if(campo_nombre.getText()!=null&&campo_telefono.getText()!=null&&campo_email.getText()!=null&&val!=null&&grupo_.getValue()!=null&&notas_adicionales.getText()!=null&&fechadenacimiento.getValue()!=null) {
 			Contacto con = new Contacto();
 		 Alert nuevo = new Alert(AlertType.CONFIRMATION);
 		 nuevo.setContentText("Seguro que quiere guardar los datos del contacto ?");
