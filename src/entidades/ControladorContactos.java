@@ -125,4 +125,9 @@ public class ControladorContactos {
 		
 		return contactos;
 	}
+	
+	public static String NotasAdicionales(String notas) {
+		notas=notas.replaceAll("\\s", "");
+		return notas;
+	}
 }

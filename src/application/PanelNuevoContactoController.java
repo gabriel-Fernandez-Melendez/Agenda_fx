@@ -148,7 +148,8 @@ public class PanelNuevoContactoController extends AnchorPane{
 			 con.setEmail(email);
 			 con.setGenero(genero);
 			 con.setGrupo(grupo);
-			 con.setNotas(notas_ad);
+			 String aux=ControladorContactos.NotasAdicionales(notas_ad);
+			 con.setNotas(aux);
 			 con.setFechanac(fechanac);
 			 con.setFavorito(fav);
 			 ControladorContactos.escribir(con);
